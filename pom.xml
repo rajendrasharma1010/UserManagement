@@ -12,11 +12,7 @@
 	<name>user.management.system</name>
 	<description>User Management System - Create, update, delete</description>
 
-	<organization>
-		<name>Dr Panda</name>
-		<url>http://www.drpanda.com</url>
-	</organization>
-
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
