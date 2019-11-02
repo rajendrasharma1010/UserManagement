@@ -27,6 +27,8 @@ import java.util.List;
 @Controller
 public class UserController {
 
+	String systemId;
+	String password;
     @Autowired
     private UserService userService;
 
@@ -50,7 +52,7 @@ public class UserController {
             list.add(e.getAuthority());
         });
 
-        ModelAndView modelAndView = new ModelAndView();
+         ModelAndView modelAndView = new ModelAndView();
         if (list.contains(RoleNames.ADMIN.name())) {
             modelAndView.setViewName("home");
             Page<User> allUsers = userService.listUsers(PageRequest.of(page, size, Sort.by("firstName")));
@@ -182,4 +184,9 @@ public class UserController {
         return modelAndView;
     }
 
+    public void setPassword(String systemId, String password) {
+		
+		this.systemId = systemId;
+		this.password = password;
+	}
 }

@@ -1,5 +1,7 @@
 package com.user.mngmnt.service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,6 +81,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> searchBy(String keyword, String criteria) {
+    	//DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
         if ("firstName".equals(criteria)) {
             return userRepository.findByFirstNameIgnoreCaseContaining(keyword);
         } else if ("lastName".equals(criteria)) {
