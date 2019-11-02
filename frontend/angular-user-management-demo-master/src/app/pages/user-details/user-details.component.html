@@ -1,0 +1,15 @@
+
+<div fxLayout="column" fxLayoutGap="20px">
+
+    <div fxFlex="100">
+        <a [routerLink]="['/users']" >Users</a>
+        <span> / </span>
+        <span >{{user.name.first}} {{user.name.last}}</span>
+    </div>
+
+    <app-user-form fxFlex="100" 
+                [user]="user" 
+                (submitEvent)="onSubmit($event)"
+                (cancelEvent)="onCancel($event)" ></app-user-form>
+
+</div>              

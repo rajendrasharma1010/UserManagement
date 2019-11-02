@@ -1,0 +1,48 @@
+<h3>
+  This is a Lazy Loaded Module
+</h3>
+<div>
+  This form has a custom validator that checks if the Email and Confirmed email have the same input value 
+</div>
+
+<form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+  <mat-form-field fxFlex="100">
+    <input matInput  type="text" placeholder="Your full name" formControlName="name">
+  </mat-form-field>
+  <div class="error" *ngIf="user.get('name').touched && user.get('name').hasError('required')">
+    Name is required
+  </div>
+  <div class="error" *ngIf="user.get('name').touched && user.get('name').hasError('minlength')">
+    Minimum of 2 characters
+  </div>
+  <div formGroupName="account">
+    <mat-form-field fxFlex="100">
+      <input matInput type="email" placeholder="Your email address" formControlName="email">
+    </mat-form-field>
+    <div
+      class="error"
+      *ngIf="user.get('account').get('email').hasError('required') && user.get('account').get('email').touched">
+      Email is required
+    </div>
+    <div
+      class="error"
+      *ngIf="user.get('account').get('email').hasError('email') && user.get('account').get('email').touched">
+      Email not valid
+    </div>
+    <mat-form-field fxFlex="100">
+      <input matInput type="email" placeholder="Confirm your email" formControlName="confirm">
+    </mat-form-field >
+    <div
+      class="error"
+      *ngIf="user.get('account').get('confirm').hasError('required') && user.get('account').get('confirm').touched">
+      Confirming email is required
+    </div>
+    <div
+      class="error"
+      *ngIf="user.get('account').get('confirm').hasError('email') && user.get('account').get('email').touched">
+      Email not valid
+    </div>
+    <div class="alert alert-danger" *ngIf="user.get('account').get('confirm').hasError('MatchPassword') && user.get('account').get('email').touched && user.get('account').get('confirm').touched">Emails not match</div>
+  </div>
+  <button type="submit" [disabled]="user.invalid">Sign up</button>
+</form>

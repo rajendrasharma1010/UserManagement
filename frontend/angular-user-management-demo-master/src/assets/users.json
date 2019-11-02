@@ -1,0 +1,74 @@
+{
+"users": [
+    {
+    "id" : "1234567890",
+    "name" : {
+        "first" : "John",
+        "last" : "Doe"
+    },
+    "email" : "john.doe@mail.tld",
+    "picture" : "/images/awesome-avatar.png",
+    "description" : "Unknown person"
+  },
+  {
+    "id" : "1234567891",
+    "name" : {
+        "first" : "Alpha",
+        "last" : "Beta"
+    },
+    "email" : "alpha.beta@mail.tld",
+    "picture" : "/images/awesome-avatar.png",
+    "description" : "Unknown person"
+  },
+  {
+    "id" : "1234567842",
+    "name" : {
+        "first" : "Jim",
+        "last" : "Dom"
+    },
+    "email" : "jim.dom@mail.tld",
+    "picture" : "/images/awesome-avatar.png",
+    "description" : "Unknown person"
+  },
+  {
+    "id" : "1234567823",
+    "name" : {
+        "first" : "Lorem",
+        "last" : "Ispum"
+    },
+    "email" : "lorem.ispum@mail.tld",
+    "picture" : "/images/awesome-avatar.png",
+    "description" : "Unknown person"
+  },
+  {
+    "id" : "1834567824",
+    "name" : {
+        "first" : "Kot",
+        "last" : "Fare"
+    },
+    "email" : "kot.fare@mail.tld",
+    "picture" : "/images/awesome-avatar.png",
+    "description" : "Unknown person"
+  },
+  {
+    "id" : "1434567825",
+    "name" : {
+        "first" : "Nora",
+        "last" : "Johns"
+    },
+    "email" : "nora.johns@mail.tld",
+    "picture" : "/images/awesome-avatar.png",
+    "description" : "jazz singer"
+  },
+  {
+    "id" : "1734567826",
+    "name" : {
+        "first" : "Betty",
+        "last" : "Smith"
+    },
+    "email" : "betty.smith@mail.tld",
+    "picture" : "/images/awesome-avatar.png",
+    "description" : "Unknown person"
+  }
+]
+}

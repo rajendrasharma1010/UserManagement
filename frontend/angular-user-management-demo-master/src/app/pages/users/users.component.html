@@ -1,0 +1,48 @@
+<div>
+  <div fxLayout="row">
+      <div fxFlex="70">
+          <app-search-input [userList]="userList"
+                            (searchUsers)="searchEvent($event)"></app-search-input>
+      </div>
+      <div fxFlex="30" fxFlexAlign="right" class="text-center" >
+        <button mat-raised-button color="primary" [routerLink]="['/user-new']" >Add New User</button>
+      </div>
+  </div>
+  
+  <div fxLayout="column" fxLayoutGap="20px" style="margin-top: 20px;"  >
+
+      <div  *ngFor='let user of usersListDisplay' >
+        <mat-card *ngIf="!!user.display">
+          <mat-card-header fxFlex="70">
+              <div mat-card-avatar class="example-header-image"  >
+                  <img [defaultImage]="'assets/loading.gif'" [lazyLoad]="'https://robohash.org/'+user.id" >
+              </div>
+        
+              <mat-card-title>
+                <span>{{user.name.first}}</span>
+                <span>{{user.name.last}}</span>
+              </mat-card-title>
+              <mat-card-subtitle ><span>{{user.email}}</span></mat-card-subtitle >
+            
+          </mat-card-header>
+          <mat-card-actions fxFlex="30">
+            <div fxLayout="row">
+              <button mat-raised-button [routerLink]="['/user-details', user.id]" >edit</button>
+              <button mat-raised-button color="warn" (click)="deleteUser(user)">delete</button>
+            </div>            
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <div fxLayout="row" fxLayoutGap="20px" style="margin-top: 20px;"  >
+        <mat-form-field fxFlex="">
+            Custom Items/Page
+            <input matInput [(ngModel)]="pageSize" (keyup)="updateUsersListDisplay()">
+          </mat-form-field>  
+        <mat-paginator [length]="userList.length"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+            (page)="onPaginationChange($event)"></mat-paginator>
+      </div>
+  </div>
+  
+</div>

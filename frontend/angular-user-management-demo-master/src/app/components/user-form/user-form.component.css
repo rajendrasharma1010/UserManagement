@@ -1,0 +1,33 @@
+ 
+/deep/ .customImageUpload {
+    background-color: #dd3;
+    border-radius: 5px;
+    margin:5px;
+    width: 100%;
+
+    .img-ul-upload {
+        background-color: #000 !important;
+    }
+    
+    .img-ul-clear {
+        background-color: #B819BB !important;
+        display: none;
+    }
+    
+    .img-ul-drag-box-msg {
+        color: purple !important;
+    }
+    
+    .img-ul-container {
+        background-color: #FF6CAD !important;
+    }
+
+    .img-ul-button{
+        font-size: 1em;
+    }
+
+    .img-ul-image{
+        
+    }
+}
+

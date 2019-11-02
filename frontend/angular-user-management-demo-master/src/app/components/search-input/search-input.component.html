@@ -1,0 +1,15 @@
+
+
+<form  novalidate  [formGroup]="searchForm">
+      <mat-form-field >
+        <input #searchInput matInput type="text" placeholder="Search" formControlName="searchString">
+      </mat-form-field>
+      <span><mat-icon>search</mat-icon></span>
+</form>
+
+<mat-radio-group fxLayout="row" fxLayoutGap="10px"  [(ngModel)]="searchType">
+    <mat-radio-button  *ngFor="let type of searchTypes" [value]="type">
+        {{type}}
+    </mat-radio-button>
+</mat-radio-group>
+ 

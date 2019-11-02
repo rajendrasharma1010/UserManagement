@@ -1,0 +1,6 @@
+projectKey=my:usermakdjh34o8u594555
+serverUrl=http://localhost:9000
+serverVersion=7.0.0.36138
+dashboardUrl=http://localhost:9000/dashboard/index/my:usermakdjh34o8u594555
+ceTaskId=AWL3aZXx5wMD-O3q26bs
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWL3aZXx5wMD-O3q26bs

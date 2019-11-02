@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+ 
+
+  <mat-sidenav-container  id="container" >
+    <mat-sidenav #sidenav [mode]="'over'">
+        <app-mainmenu [menuArray]="menuArray"></app-mainmenu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div fxLayout="row">
+          <button fxHide fxShow.xs mat-button (click)="sidenav.toggle()"><i class="material-icons">menu</i></button>
+        <h1>Welcome to {{ title }}!</h1>
+      </div>
+      <div fxLayout="row" 
+          fxLayoutAlign="center center">
+        <div fxFlexAlign="left"  fxFlex="20" fxShow fxHide.xs >
+          <app-mainmenu [menuArray]="menuArray" [navFlex]="navFlex"></app-mainmenu>
+        </div>
+        <div fxFlex="80" [@routerTransition]="getState(o)">
+          
+          <router-outlet #o="outlet"></router-outlet>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+ 

@@ -1,0 +1,15 @@
+
+<h1 mat-dialog-title>Please Login First</h1>
+<div mat-dialog-content fxLayout="column">
+  <p>usr: "test", passwd: "test"</p>
+  <mat-form-field>
+    <input matInput type="text" placeholder="username" [(ngModel)]="username">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="password" placeholder="password" [(ngModel)]="password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="checkCredentials()" cdkFocusInitial>Ok</button>
+</div>

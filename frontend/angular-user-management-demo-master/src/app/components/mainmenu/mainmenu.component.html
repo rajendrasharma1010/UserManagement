@@ -1,0 +1,11 @@
+<nav fxLayout="column"
+    fxFlex="{{navFlex}}" 
+    fxLayoutGap="10px" >
+
+    <button *ngFor="let menu of menuArray" 
+            class="{{menu.class}}" 
+            fxFlex="{{menu.fxFlex}}"
+            routerLink="{{menu.routerLink}}"
+            routerLinkActive="{{menu.routerLinkActive}}"  
+            [routerLinkActiveOptions]="menu.routerLinkActiveOptions">{{menu.text}}</button>
+</nav>
