@@ -47,3 +47,45 @@ export class UserFormComponent implements OnInit {
     console.log(file.response);
   }
 }
+export default {
+  components: {
+    ViewPaneInfo
+  },
+  props: {
+    question: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
+    return {
+      selectedSorting: 'votes',
+      sortingOptions: ['votes', 'last activity', 'creation date']
+    }
+  },
+  computed: {
+    sortedAnswers() {
+      switch (this.selectedSorting) {
+        case 'last activity':
+          return this.question.answers
+            .concat()
+            .sort(
+              (a, b) => (a.last_activity_date < b.last_activity_date ? 1 : -1)
+            )
+        case 'creation date':
+          return this.question.answers
+            .concat()
+            .sort(function (a, b) { if (a.rate < b.rate) { return 1 } if (a.rate > b.rate) { return -1; } return 0; })
+        default:
+          return this.question.answers
+      }
+    }
+  },
+  methods: {
+    getDate(timestamp) {
+		
+      //return formatDate(timestamp)
+    }
+  }
+}
+
